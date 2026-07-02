@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surti Egg Tadka — Morbi's Finest Egg Destination</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     LOADER
+══════════════════════════════════════════ -->
+<div id="loader">
+  <div class="loader-egg"><img src="./images/egg.png" alt="Egg Image"></div>
+  <div class="loader-text">Surti Egg Tadka</div>
+  <div class="loader-sub">Morbi's Finest</div>
+</div>
+
+<!-- Scroll to top -->
+<button id="scrollTop" title="Back to top">↑</button>
+
+<!-- ══════════════════════════════════════════
+     MOBILE MENU (full-screen overlay)
+══════════════════════════════════════════ -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#menu"     onclick="closeMobile()">Menu</a>
+  <a href="#showcase" onclick="closeMobile()">Gallery</a>
+  <a href="#location" onclick="closeMobile()">Location</a>
+  <a href="#menu"     onclick="closeMobile()">Order Now</a>
+</div>
+
+<!-- ══════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════ -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">
+    <!-- Hero logo image — fried egg photo -->
+    <img
+      class="nav-logo-img"
+      src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=80&h=80&q=80"
+      onerror="this.style.display='none'"
+      alt="Surti Egg Tadka">
+    Surti <span>&nbsp;Egg Tadka</span>
+  </a>
+
+  <div class="nav-links">
+    <a href="#menu">Menu</a>
+    <a href="#showcase">Gallery</a>
+    <a href="#location">Location</a>
+  </div>
+
+  <div class="nav-right">
+    <button class="nav-cta" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
+      <span class="cta-emoji">🛵</span>
+      <span class="cta-label">Order Now</span>
+    </button>
+    <button class="cart-nav-btn" onclick="openCart()">
+      <span class="cart-emoji">🛒</span>
+      <span class="cart-label">Cart</span>
+      <span id="cartBadge">0</span>
+    </button>
+  </div>
+
+  <div class="hamburger" id="hamburger" onclick="toggleMobile()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-bg-text">EGG</div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="pulse"></div>
+      Now on Zomato &amp; Swiggy
+    </div>
+
+    <h1>Morbi's Most<br><em>Beloved</em> Egg<br>Destination.</h1>
+
+    <p class="hero-sub">
+      From sizzling boiled tadkas to royal Bahubali Specials —
+      every dish crafted with Surti love, served fresh in 20 minutes.
+    </p>
+
+    <div class="hero-actions">
+      <button class="btn-primary"    onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Explore Full Menu</button>
+      <button class="btn-secondary"  onclick="document.getElementById('showcase').scrollIntoView({behavior:'smooth'})">See Gallery</button>
+    </div>
+
+    <div class="hero-badges">
+      <div class="badge-item">
+        <div class="badge-icon">⏱</div>
+        <div class="badge-text">20 Min Ready<span>After placing order</span></div>
+      </div>
+      <div class="badge-item">
+        <div class="badge-icon">📍</div>
+        <div class="badge-text">Bhakti Nagar Circle<span>Sanala Bypass, Morbi</span></div>
+      </div>
+      <div class="badge-item">
+        <div class="badge-icon">⭐</div>
+        <div class="badge-text">Top Rated<span>On Zomato &amp; Swiggy</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero visual: floating ring + hero image -->
+  <div class="hero-visual">
+    <div class="hero-orbit">
+      <div class="orbit-dot"><img src="https://images.unsplash.com/photo-1607690770691-7c6a1cf27e4b?auto=format&fit=crop&w=80&h=80&q=70" alt="boiled egg" onerror="this.parentElement.innerHTML='🥚'"></div>
+      <div class="orbit-dot"><img src="https://images.unsplash.com/photo-1510693206972-df098062cb71?auto=format&fit=crop&w=80&h=80&q=70" alt="omelette"   onerror="this.parentElement.innerHTML='🍳'"></div>
+      <div class="orbit-dot"><img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=80&h=80&q=70" alt="fried rice"  onerror="this.parentElement.innerHTML='🍚'"></div>
+      <div class="orbit-dot"><img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?auto=format&fit=crop&w=80&h=80&q=70" alt="sandwich"    onerror="this.parentElement.innerHTML='🥪'"></div>
+    </div>
+    <div class="hero-img-wrap">
+      <img
+        src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=720&h=720&q=85"
+        alt="Signature egg dish"
+        onerror="this.style.fontSize='120px';this.style.display='flex';this.style.alignItems='center';this.style.justifyContent='center';this.outerHTML='<div style=\'font-size:120px;display:flex;align-items:center;justify-content:center;width:100%;height:100%;\'>🍳</div>'">
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     AVAILABILITY STRIP
+══════════════════════════════════════════ -->
+<div class="availability-strip">
+  <div class="av-label">Available on</div>
+  <div class="av-platform"><div class="plat-dot zomato-dot"></div><span>Zomato</span></div>
+  <div class="av-platform"><div class="plat-dot swiggy-dot"></div><span>Swiggy</span></div>
+  <div class="av-info">Kindly wait 20 minutes after placing your order</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     STATS
+══════════════════════════════════════════ -->
+<div class="stats-section">
+  <div class="stat-item reveal"><div class="stat-icon">🥚</div><div class="stat-num">50+</div><div class="stat-label">Egg Dishes</div></div>
+  <div class="stat-item reveal"><div class="stat-icon">⚡</div><div class="stat-num">20</div><div class="stat-label">Min Delivery</div></div>
+  <div class="stat-item reveal"><div class="stat-icon">⭐</div><div class="stat-num">4.8</div><div class="stat-label">Avg Rating</div></div>
+  <div class="stat-item reveal"><div class="stat-icon">🏆</div><div class="stat-num">#1</div><div class="stat-label">Egg Spot Morbi</div></div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MENU SECTION
+══════════════════════════════════════════ -->
+<section class="menu-section" id="menu">
+  <div class="reveal">
+    <div class="section-eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Our Menu</div></div>
+    <h2 class="section-title">Every Craving,<br>Perfectly Cracked.</h2>
+    <p class="section-sub">From quick boiled eggs to elaborate specials — a menu built for every egg lover in Morbi.</p>
+  </div>
+
+  <!-- Tabs -->
+  <div class="menu-tabs reveal">
+    <button class="tab-btn active"  onclick="switchTab('starters',this)">Starters</button>
+    <button class="tab-btn"         onclick="switchTab('rice',this)">Rice &amp; Half Fry</button>
+    <button class="tab-btn"         onclick="switchTab('omelette',this)">Omelettes</button>
+    <button class="tab-btn"         onclick="switchTab('rolls',this)">Egg Rolls</button>
+    <button class="tab-btn"         onclick="switchTab('sandwiches',this)">Sandwiches</button>
+    <button class="tab-btn"         onclick="switchTab('special',this)">Special Items</button>
+    <button class="tab-btn"         onclick="switchTab('bread',this)">Bread &amp; Drinks</button>
+  </div>
+
+  <!-- ─────────────── STARTERS ─────────────── -->
+  <div class="menu-grid menu-category active" id="cat-starters">
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap">
+        <img src=https://images.unsplash.com/photo-1710445458303-857b8cdab3d0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fEJvaWxlZCUyMEVnZ3xlbnwwfHwwfHx8MA%3D%3D alt="Boiled Egg" loading="lazy">
+        <div class="card-img-overlay"></div>
+        <div class="card-img-fallback">🥚</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Boiled 1 Egg</div>
+        <div class="card-desc">Classic boiled egg, simple and satisfying</div>
+        <div class="card-footer"><div class="card-price">₹15</div></div>
+      </div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap">
+        <img src=https://media.istockphoto.com/id/1862418845/photo/fried-boiled-eggs-on-plate.jpg?s=612x612&w=0&k=20&c=OIQicHkW7TlT3NuwY_EGoGxyNGDgbvKGtC5wOVOTO0c= alt="Lasan Tadka" loading="lazy">
+        <div class="card-img-overlay"></div>
+        <div class="card-badge-img">Popular</div>
+        <div class="card-img-fallback">🧄</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Boiled Lasan Tadka</div>
+        <div class="card-desc">Boiled egg with aromatic garlic tadka</div>
+        <div class="card-footer"><div class="card-price">₹130</div></div>
+      </div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap">
+        <img src=https://media.istockphoto.com/id/2213408517/photo/kerala-style-egg-curry-of-egg-roast-in-black-bowl.jpg?s=612x612&w=0&k=20&c=APq1kyJjkrBeusXIAAyVOlq7V0FlhvGTv2V5Rr8Ar90= alt="Masala Fry" loading="lazy">
+        <div class="card-img-overlay"></div>
+        <div class="card-badge-img hot">Spicy</div>
+        <div class="card-img-fallback">🌶️</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Boiled Masala Fry</div>
+        <div class="card-desc">Boiled eggs tossed in spicy masala</div>
+        <div class="card-footer"><div class="card-price">₹120</div></div>
+      </div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=400&h=320&q=80" alt="Katki Fry" loading="lazy">
+        <div class="card-img-overlay"></div>
+        <div class="card-img-fallback">🍳</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Masala Katki Fry</div>
+        <div class="card-desc">Crispy fried eggs with house masala</div>
+        <div class="card-footer"><div class="card-price">₹120</div></div>
+      </div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1510693206972-df098062cb71?auto=format&fit=crop&w=400&h=320&q=80" alt="Cheese Boiled" loading="lazy">
+        <div class="card-img-overlay"></div>
+        <div class="card-badge-img">Surti Special</div>
+        <div class="card-img-fallback">🧀</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Surti Cheese Boiled</div>
+        <div class="card-desc">Boiled eggs with melted cheese, Surti style</div>
+        <div class="card-footer"><div class="card-price">₹170</div></div>
+      </div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap">
+        <img src=https://media.istockphoto.com/id/1250485072/photo/pita-bread-with-grilled-beef-meat-and-fried-potato-covered-sesame-seeds-roasted-meal.jpg?s=612x612&w=0&k=20&c=zfdgwpubIg2PmlQ193a6rc--3TkYWJgw67N2GNqC0kE= alt="Cheese Kofta" loading="lazy">
+        <div class="card-img-overlay"></div>
+        <div class="card-badge-img hot">Hot Pick</div>
+        <div class="card-img-fallback">🟡</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Cheese Kofta</div>
+        <div class="card-desc">Rich cheese kofta egg preparation</div>
+        <div class="card-footer"><div class="card-price">₹200</div></div>
+      </div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap">
+        <img src=https://media.istockphoto.com/id/1397649012/photo/healthy-indian-green-chutney-or-sauce-made-using-coriander-mint-and-spices-isolated-wooden.jpg?s=612x612&w=0&k=20&c=OBG6SfHqEH91E2hERok-da0RTEYCs7MbjEHrPqmHtUI= alt="Green Chutney" loading="lazy">
+        <div class="card-img-overlay"></div>
+        <div class="card-img-fallback">🌿</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Surti Green Chutney</div>
+        <div class="card-desc">Signature Surti green chutney preparation</div>
+        <div class="card-footer"><div class="card-price">₹80</div></div>
+      </div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap">
+        <img src=https://media.istockphoto.com/id/1180778316/photo/golden-egg-curry-in-black-bowl-at-dark-slate-background-burmese-egg-curry-is-popular-myanmar.jpg?s=612x612&w=0&k=20&c=AmJ8ZNbkxaYbtQHe49hTkEvI6LkF1Xa9_FSMG76hEfE= alt="Red Egg Kofta" loading="lazy">
+        <div class="card-img-overlay"></div>
+        <div class="card-badge-img">Unique</div>
+        <div class="card-img-fallback">🔴</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Red Egg Kofta</div>
+        <div class="card-desc">Bold red masala egg kofta</div>
+        <div class="card-footer"><div class="card-price">₹200</div></div>
+      </div>
+    </div>
+
+  </div><!-- /starters -->
+
+  <!-- ─────────────── RICE & HALF FRY ─────────────── -->
+  <div class="menu-grid menu-category" id="cat-rice">
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap">
+        <img src=https://media.istockphoto.com/id/691554478/photo/omelet-with-parsley-cherry-tomatoes-and-copyspace.jpg?s=612x612&w=0&k=20&c=EDi8NhOqINhaAuJ4I9V15lNGZEs3uv1WKRO5_yrLrpc= alt="Half Fry" loading="lazy">
+        <div class="card-img-overlay"></div><div class="card-img-fallback">🍳</div>
+      </div>
+      <div class="card-body"><div class="card-name">Half Fry Tomato Fry</div><div class="card-desc">Half fried egg with tangy tomato</div><div class="card-footer"><div class="card-price">₹120</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1510693206972-df098062cb71?auto=format&fit=crop&w=400&h=320&q=80" alt="Lasan Fry" loading="lazy">
+        <div class="card-img-overlay"></div><div class="card-img-fallback">🧄</div>
+      </div>
+      <div class="card-body"><div class="card-name">Lasan Fry</div><div class="card-desc">Garlic infused egg fry</div><div class="card-footer"><div class="card-price">₹100</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=400&h=320&q=80" alt="Egg Fried Rice" loading="lazy">
+        <div class="card-img-overlay"></div>
+        <div class="card-badge-img">Popular</div>
+        <div class="card-img-fallback">🍚</div>
+      </div>
+      <div class="card-body"><div class="card-name">Egg Fried Rice</div><div class="card-desc">Wok-tossed egg fried rice</div><div class="card-footer"><div class="card-price">₹150</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=400&h=320&q=80" alt="Schezwan Rice" loading="lazy">
+        <div class="card-img-overlay"></div>
+        <div class="card-badge-img hot">Trending</div>
+        <div class="card-img-fallback">🔥</div>
+      </div>
+      <div class="card-body"><div class="card-name">Schezwan Egg Fried Rice</div><div class="card-desc">Spicy Schezwan style egg fried rice</div><div class="card-footer"><div class="card-price">₹150</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=400&h=320&q=80" alt="Bhurji Pulao" loading="lazy">
+        <div class="card-img-overlay"></div><div class="card-img-fallback">🍛</div>
+      </div>
+      <div class="card-body"><div class="card-name">Bhurji Pulao</div><div class="card-desc">Fluffy egg bhurji mixed pulao</div><div class="card-footer"><div class="card-price">₹150</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap">
+        <img src=https://media.istockphoto.com/id/651110156/photo/egg-biryani-served-with-yogurt-dip-on-a-clay-pot-selective-focus.jpg?s=612x612&w=0&k=20&c=ElJdGWDqulk9OtBQeFHNRvNckbhArSOJR7K17vMMtFc= alt="Anda Biryani" loading="lazy">
+        <div class="card-img-overlay"></div>
+        <div class="card-badge-img">Feast</div>
+        <div class="card-img-fallback">👑</div>
+      </div>
+      <div class="card-body"><div class="card-name">Anda Biryani</div><div class="card-desc">Aromatic egg biryani, loaded with spices</div><div class="card-footer"><div class="card-price">₹150</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap">
+        <img src=https://media.istockphoto.com/id/2227167767/photo/a-plate-of-indian-dahi-vada-featuring-deep-fried-lentil-fritters-soaked-in-yogurt.jpg?s=612x612&w=0&k=20&c=F4oXU8y0xOeSrjy11My-6kmnD75S-kff2iRrMAocKfA= alt="Russian Fry" loading="lazy">
+        <div class="card-img-overlay"></div><div class="card-img-fallback">🌍</div>
+      </div>
+      <div class="card-body"><div class="card-name">Russian Fry</div><div class="card-desc">Creamy Russian style egg fry</div><div class="card-footer"><div class="card-price">₹220</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap">
+        <img src=https://media.istockphoto.com/id/1135970098/photo/egg-curry-in-a-bowl.jpg?s=612x612&w=0&k=20&c=CQPmyo4vh-EsVjFI1uBvyF9t8v0Y_yB1YmjFIwpEV5E= alt="Australian Fry" loading="lazy">
+        <div class="card-img-overlay"></div><div class="card-img-fallback">🌏</div>
+      </div>
+      <div class="card-body"><div class="card-name">Australian Fry</div><div class="card-desc">Bold Australian style egg preparation</div><div class="card-footer"><div class="card-price">₹230</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap">
+        <img src=https://media.istockphoto.com/id/2248553806/photo/extreme-close-up-macro-of-a-flavorful-and-very-spicy-egg-masala-curry-a-traditional-bengali.jpg?s=612x612&w=0&k=20&c=3Tu3EsUl6OzikGOOaAM8vCnXRrREdElbxDf4-MUvv48= alt="Tikhari Half Fry" loading="lazy">
+        <div class="card-img-overlay"></div>
+        <div class="card-badge-img hot">Extra Spicy</div>
+        <div class="card-img-fallback">🌶️</div>
+      </div>
+      <div class="card-body"><div class="card-name">Tikhari Half Fry</div><div class="card-desc">Fiery tikhari spiced half fry</div><div class="card-footer"><div class="card-price">₹280</div></div></div>
+    </div>
+
+  </div><!-- /rice -->
+
+  <!-- ─────────────── OMELETTES ─────────────── -->
+  <div class="menu-grid menu-category" id="cat-omelette">
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/826530892/photo/masala-omelette-indian-style.jpg?s=612x612&w=0&k=20&c=BusWZYQIDyXEF4iVLPemBYr03TBzmGpy7upIg7izka4= alt="Masala Omelette" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🍳</div></div>
+      <div class="card-body"><div class="card-name">Masala Omelette</div><div class="card-desc">Traditional Indian spiced omelette</div><div class="card-footer"><div class="card-price">₹70</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/1264682410/photo/egg-omelette-with-coriander-leaves-and-red-chillies-in-a-banana-leaf.jpg?s=612x612&w=0&k=20&c=2ZHNQx5yFAlCZ6yau6vR44duXp80clrg4Md-E3fmtio= alt="Limbu Mari" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🍋</div></div>
+      <div class="card-body"><div class="card-name">Limbu Mari Omelette</div><div class="card-desc">Tangy lemon pepper omelette</div><div class="card-footer"><div class="card-price">₹70</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/1253091782/photo/healthy-breakfast.jpg?s=612x612&w=0&k=20&c=v0eVa9kC813zejsYEK50pKBQa23r-KERqE5cAZS_UnM= alt="Green Omelette" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🌿</div></div>
+      <div class="card-body"><div class="card-name">Green Omelette</div><div class="card-desc">Herbed green omelette</div><div class="card-footer"><div class="card-price">₹80</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/2072690551/photo/omelette-with-wild-garlic-spring-plants.jpg?s=612x612&w=0&k=20&c=dvv8ZbkKim23ATwXuYNaHLEi8Bv07k_2wKaZzI7ashI= alt="Butter Cheese Green" loading="lazy"><div class="card-img-overlay"></div><div class="card-badge-img">Popular</div><div class="card-img-fallback">🧀</div></div>
+      <div class="card-body"><div class="card-name">Butter Cheese Green Omelette</div><div class="card-desc">Butter, cheese &amp; green herbs</div><div class="card-footer"><div class="card-price">₹120</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/485040276/photo/herb-omelette-with-chives-and-oregano.jpg?s=612x612&w=0&k=20&c=gWzwd_-neHOmCgirxaaGCwEJElbuYPzY917oWPWp6kI= alt="Cheese Omelette" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🧀</div></div>
+      <div class="card-body"><div class="card-name">Cheese Omelette</div><div class="card-desc">Loaded with melted cheese</div><div class="card-footer"><div class="card-price">₹100</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/1048121658/photo/scrambled-eggs-or-omelette-made-from-eggs-and-cheese-with-herbs.jpg?s=612x612&w=0&k=20&c=283km_ygYLTOScMDFs9bc6zrKy3nfU7BvxEg1CTCARc= alt="Butter Omelette" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🧈</div></div>
+      <div class="card-body"><div class="card-name">Butter Omelette</div><div class="card-desc">Rich, buttery soft omelette</div><div class="card-footer"><div class="card-price">₹80</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/1319469052/photo/egg-stuffed-with-minced-pork-and-tomato-crat-fried-to-combine-wrapped-in-egg.jpg?s=612x612&w=0&k=20&c=xwQEwR_ts3vVpaZ9-sdw3Dlgdpy2rHeLg7mQ5pArJ7U= alt="Kheema Omelette" loading="lazy"><div class="card-img-overlay"></div><div class="card-badge-img hot">Bold</div><div class="card-img-fallback">🥩</div></div>
+      <div class="card-body"><div class="card-name">Kheema Omelette</div><div class="card-desc">Minced meat stuffed omelette</div><div class="card-footer"><div class="card-price">₹150</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/1365572452/photo/stir-fried-veggie-omelet-with-mix-vegetables-indian-nepali-style-masala-omelette-close-up-in.jpg?s=612x612&w=0&k=20&c=HAob0uiw7q6_vWDfY9MmNrhMYXnVYOhr0bM16esVpJo= alt="Rajasthani Omelette" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🏜️</div></div>
+      <div class="card-body"><div class="card-name">Rajasthani Omelette</div><div class="card-desc">Royal Rajasthani spice blend</div><div class="card-footer"><div class="card-price">₹150</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/1306093015/photo/traditional-spanish-omelette-with-potatoes-and-zuuchini.jpg?s=612x612&w=0&k=20&c=hsLcmvjmDLiLP6O2z64HwQ3KhPNsnAX7By7lnPWqLKU= alt="Spanish Omelette" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🌍</div></div>
+      <div class="card-body"><div class="card-name">Spanish Omelette</div><div class="card-desc">European style egg preparation</div><div class="card-footer"><div class="card-price">₹170</div></div></div>
+    </div>
+
+  </div><!-- /omelette -->
+
+  <!-- ─────────────── EGG ROLLS ─────────────── -->
+  <div class="menu-grid menu-category" id="cat-rolls">
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/1391566618/photo/soya-chunk-roll-with-red-tomato-sauce.jpg?s=612x612&w=0&k=20&c=ESZ3nQnYiTZX-R0cJsRrvMJ67-FfWUUsNjKYns9l3Fk= alt="Egg Roll" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🌯</div></div>
+      <div class="card-body"><div class="card-name">Egg Roll</div><div class="card-desc">Classic egg roll wrap</div><div class="card-footer"><div class="card-price">₹100</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/2243832004/photo/double-egg-roll-shawarma-wraps-packed-with-vibrant-fresh-ingredients-and-a-luscious-creamy.jpg?s=612x612&w=0&k=20&c=pfk2Oeo_pqwNwESP5j7Sd7S8jX5rdz2gl27VGoD6NXE= alt="Butter Egg Roll" loading="lazy"><div class="card-img-overlay"></div><div class="card-badge-img">Popular</div><div class="card-img-fallback">🧈</div></div>
+      <div class="card-body"><div class="card-name">Butter Egg Roll</div><div class="card-desc">Egg roll with buttery finish</div><div class="card-footer"><div class="card-price">₹120</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/1548001969/photo/chicken-and-egg-wrap-or-egg-chicken-roll-stir-fried-bell-peppers-and-minced-chicken-wrapped.jpg?s=612x612&w=0&k=20&c=py__I0dOZD6GHOji-fWaArk6phG30jblfiUNsc98Xqg= alt="Butter Cheese Roll" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🧀</div></div>
+      <div class="card-body"><div class="card-name">Butter Cheese Egg Roll</div><div class="card-desc">Butter + cheese + egg, rolled to perfection</div><div class="card-footer"><div class="card-price">₹140</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/1409919857/photo/delicious-indian-street-food-egg-rolls-is-ready-to-eat.jpg?s=612x612&w=0&k=20&c=9vbJmMR0mkF8ctKTTthVZITQMezkCPWZvjkOdUgL3KQ= alt="Special Egg Roll" loading="lazy"><div class="card-img-overlay"></div><div class="card-badge-img hot">Must Try</div><div class="card-img-fallback">⭐</div></div>
+      <div class="card-body"><div class="card-name">Special Egg Roll</div><div class="card-desc">Chef's signature special egg roll</div><div class="card-footer"><div class="card-price">₹170</div></div></div>
+    </div>
+
+  </div><!-- /rolls -->
+
+  <!-- ─────────────── SANDWICHES ─────────────── -->
+  <div class="menu-grid menu-category" id="cat-sandwiches">
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?auto=format&fit=crop&w=400&h=320&q=80" alt="Egg Sandwich" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🥪</div></div>
+      <div class="card-body"><div class="card-name">Egg Sandwich</div><div class="card-desc">Classic egg sandwich</div><div class="card-footer"><div class="card-price">₹60</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=400&h=320&q=80" alt="Butter Egg Sandwich" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🧈</div></div>
+      <div class="card-body"><div class="card-name">Butter Egg Sandwich</div><div class="card-desc">Buttery egg sandwich</div><div class="card-footer"><div class="card-price">₹70</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/2270235639/photo/scrambled-egg-sandwich-on-toasted-bread-with-fresh-lettuce-on-plate-warm-morning-comfort-and.jpg?s=612x612&w=0&k=20&c=vBv19RgwMVvgttxnA56031lh1Xq77B7MEkdDI1puWRw= alt="Cheese Sandwich" loading="lazy"><div class="card-img-overlay"></div><div class="card-badge-img">Popular</div><div class="card-img-fallback">🧀</div></div>
+      <div class="card-body"><div class="card-name">Butter Cheese Egg Sandwich</div><div class="card-desc">Rich butter cheese egg sandwich</div><div class="card-footer"><div class="card-price">₹100</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/519766631/photo/club-sandwich-8.jpg?s=612x612&w=0&k=20&c=wDXyhgXfgaxP_XaZUxCCcVRpjp8bevxT87EnB2P9WDo= alt="Surati Special" loading="lazy"><div class="card-img-overlay"></div><div class="card-badge-img">Surti Style</div><div class="card-img-fallback">🌿</div></div>
+      <div class="card-body"><div class="card-name">Surati Red &amp; Green Special</div><div class="card-desc">Iconic Surati red-green special sandwich</div><div class="card-footer"><div class="card-price">₹160</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/2046217346/photo/indian-plain-sandwich-with-vegetable-and-sauce-in-plate-india-closeup.jpg?s=612x612&w=0&k=20&c=-2kLtjUnPjYldUQdO0s0FtWH-niGuoVuGjI0_hb5Q7I= alt="Egg Cheese Gotalo" loading="lazy"><div class="card-img-overlay"></div><div class="card-badge-img hot">Famous</div><div class="card-img-fallback">🟡</div></div>
+      <div class="card-body"><div class="card-name">Egg Cheese Gotalo</div><div class="card-desc">Signature Surati Gotalo with cheese</div><div class="card-footer"><div class="card-price">₹150</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/1277585275/photo/masala-egg-bhurji-or-muttai-podimas-close-up-anda-bhurji-is-indian-cuisine-scrambled-eggs.jpg?s=612x612&w=0&k=20&c=nC3JDPSHpCfNf2KWjD2ZD9hgkN-E57tEHzkJYx5LqPo= alt="Bhurji" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🍳</div></div>
+      <div class="card-body"><div class="card-name">Bhurji</div><div class="card-desc">Scrambled egg bhurji</div><div class="card-footer"><div class="card-price">₹120</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/607996836/photo/nargisi-kofta-curry-indian-cuisine.jpg?s=612x612&w=0&k=20&c=py1TaLV3RyHbiPBS0LIRRULRlVAwSbCHEcd6oON_JMU= alt="Egg Curry" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🍛</div></div>
+      <div class="card-body"><div class="card-name">Egg Curry</div><div class="card-desc">Spiced egg curry</div><div class="card-footer"><div class="card-price">₹140</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/1391616873/photo/pav-bhaji-bread-toast.jpg?s=612x612&w=0&k=20&c=4qOp5-85J_0nhfnZ_As9IdPmqxC6fiiYViiJ6SU8stQ= alt="Mumbai Special" loading="lazy"><div class="card-img-overlay"></div><div class="card-badge-img hot">Premium</div><div class="card-img-fallback">🏙️</div></div>
+      <div class="card-body"><div class="card-name">Mumbai Special</div><div class="card-desc">Mumbai ishtyle egg preparation</div><div class="card-footer"><div class="card-price">₹260</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/1134682799/photo/omelette-on-a-plate.jpg?s=612x612&w=0&k=20&c=NkYs9FJJM_QJNJmNwp2SwKcXwEU09qQ_2O2hCBTcdDE= alt="Egg Tiranga" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🎨</div></div>
+      <div class="card-body"><div class="card-name">Egg Tiranga</div><div class="card-desc">Tricolour egg special</div><div class="card-footer"><div class="card-price">₹280</div></div></div>
+    </div>
+
+  </div><!-- /sandwiches -->
+
+  <!-- ─────────────── SPECIAL ITEMS ─────────────── -->
+  <div class="menu-grid menu-category" id="cat-special">
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/474350248/photo/delicious-thai-food-steamed-fish-with-curry-paste.jpg?s=612x612&w=0&k=20&c=YZZalsxUuE56sHtL2KT6dE_nDbAfivlKf5QCT6z3o5Q= alt="Egg Potli" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🎁</div></div>
+      <div class="card-body"><div class="card-name">Egg Potli</div><div class="card-desc">Egg served in a potli style</div><div class="card-footer"><div class="card-price">₹240</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/1853616256/photo/smashed-avocado-toast-with-poached-egg.jpg?s=612x612&w=0&k=20&c=Ykua93ekGqJRsqVILyQfRmoU8aCztubDw8fagyIaUAw= alt="Egg Paplet" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🐟</div></div>
+      <div class="card-body"><div class="card-name">Egg Paplet</div><div class="card-desc">Paplet style egg preparation</div><div class="card-footer"><div class="card-price">₹290</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src="https://media.istockphoto.com/id/2277670698/photo/thai-sweet-and-sour-fried-boiled-eggs-on-a-traditional-ceramic-dish-on-black-background.jpg?s=612x612&w=0&k=20&c=ibIhAPvpuOS-b-gPC8nSvWTN8G2VUuAQIgxcL1nmHoM=" alt="Maharaja Lazeez" loading="lazy"><div class="card-img-overlay"></div><div class="card-badge-img">Royal</div><div class="card-img-fallback">👑</div></div>
+      <div class="card-body"><div class="card-name">Maharaja Lazeez</div><div class="card-desc">Royal maharaja style rich egg dish</div><div class="card-footer"><div class="card-price">₹320</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=400&h=320&q=80" alt="Ande Ka Fanda" loading="lazy"><div class="card-img-overlay"></div><div class="card-badge-img hot">Drama</div><div class="card-img-fallback">🥁</div></div>
+      <div class="card-body"><div class="card-name">Ande Ka Fanda</div><div class="card-desc">A showstopper egg preparation</div><div class="card-footer"><div class="card-price">₹320</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/2169377365/photo/chinese-hot-pot-ingredients.jpg?s=612x612&w=0&k=20&c=rciJZ-2xfNymnCIA7fZEVOQw8-XmCh9e2ETZNhOhlw8= alt="Egg Rabari Roll" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🌯</div></div>
+      <div class="card-body"><div class="card-name">Egg Rabari Roll</div><div class="card-desc">Creamy Rabari style egg roll</div><div class="card-footer"><div class="card-price">₹360</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/2161283742/photo/roti-jala-or-lace-pancake-is-malaysian-traditional-food-a-popular-malay-snack-served-with.jpg?s=612x612&w=0&k=20&c=0PnB96EYP1yqWw4iuGa10vp8hWJ4QMm-OmBH_-1n8BA= alt="Egg Roll Curry" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🍛</div></div>
+      <div class="card-body"><div class="card-name">Egg Roll Curry</div><div class="card-desc">Egg rolls dunked in rich curry</div><div class="card-footer"><div class="card-price">₹360</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/2243903700/photo/healthy-breakfast-omelette-with-feta-cheese-and-spinach-with-sandwiches-and-tomatoes-on.jpg?s=612x612&w=0&k=20&c=uNVhMGyz8LpP0rjf4_uFI84vsuhLOHo5Ug1JI1aBjUU= alt="Egg Patra" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🌿</div></div>
+      <div class="card-body"><div class="card-name">Egg Patra</div><div class="card-desc">Gujarati Patra inspired egg dish</div><div class="card-footer"><div class="card-price">₹360</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/826646500/photo/chinese-style-pumpkin-cake.jpg?s=612x612&w=0&k=20&c=Ot-owCZgQaL4FUBdojzTnOC-pTaGN6HG2zawWku0sKg= alt="Egg Sitara" loading="lazy"><div class="card-img-overlay"></div><div class="card-badge-img">Star</div><div class="card-img-fallback">⭐</div></div>
+      <div class="card-body"><div class="card-name">Egg Sitara</div><div class="card-desc">Star-shaped egg presentation</div><div class="card-footer"><div class="card-price">₹360</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/1487956067/photo/food-photos-various-entrees-appetizers-deserts-etc.jpg?s=612x612&w=0&k=20&c=_8T3NItjXKw9IHucoXYMxAgm57B7jTgjD5uZ51-dMbY= alt="Chef Special" loading="lazy"><div class="card-img-overlay"></div><div class="card-badge-img hot">Chef's Special</div><div class="card-img-fallback">👨‍🍳</div></div>
+      <div class="card-body"><div class="card-name">Chef's Special</div><div class="card-desc">The chef's pride — a secret recipe</div><div class="card-footer"><div class="card-price">₹420</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/1488293449/photo/bread-with-combo-pan-hot-skillet-vietnamese-b%C3%A1nh-m%C3%AC-ch%E1%BA%A3o.jpg?s=612x612&w=0&k=20&c=z18hdl3iRGqHIit-uP2R_4hpb3ohqlYaqjTur-lzUgQ= alt="Raja Rani" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">👸</div></div>
+      <div class="card-body"><div class="card-name">Raja Rani</div><div class="card-desc">A royal duo egg preparation</div><div class="card-footer"><div class="card-price">₹440</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/1072291302/photo/close-up-breakfast-eggs-and-toast-jamon-and-cheese.jpg?s=612x612&w=0&k=20&c=7eRfNKNCUpXdxcbJEgpPGU4C4AUOyFrYwUa7pB6NmK4= alt="Rajasthani Mehfil" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🏜️</div></div>
+      <div class="card-body"><div class="card-name">Rajasthani Mehfil</div><div class="card-desc">Festive Rajasthani egg platter</div><div class="card-footer"><div class="card-price">₹450</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/1387179825/photo/scrambled-eggs-and-black-beans.jpg?s=612x612&w=0&k=20&c=c3EXHhLTR8a1tBbFlrR5Fr-S7WvSOQTNS62_d-kGS8s= alt="Double Dhamaka" loading="lazy"><div class="card-img-overlay"></div><div class="card-badge-img hot">Epic</div><div class="card-img-fallback">💥</div></div>
+      <div class="card-body"><div class="card-name">Double Dhamaka</div><div class="card-desc">Double the eggs, double the flavour</div><div class="card-footer"><div class="card-price">₹470</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/2187613636/photo/the-viral-tomato-omelette.jpg?s=612x612&w=0&k=20&c=G05ycxgOzxKwE_YliBnJkvznyE-S-yc_CZ-UajB29d0= alt="Bahubali Special" loading="lazy"><div class="card-img-overlay"></div><div class="card-badge-img">Signature</div><div class="card-img-fallback">🦁</div></div>
+      <div class="card-body"><div class="card-name">Bahubali Special</div><div class="card-desc">The ultimate legendary egg feast</div><div class="card-footer"><div class="card-price">₹620</div></div></div>
+    </div>
+
+  </div><!-- /special -->
+
+  <!-- ─────────────── BREAD & DRINKS ─────────────── -->
+  <div class="menu-grid menu-category" id="cat-bread">
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/516359240/photo/bhendi-masala-or-bhindi-masala-ladies-finger-curry-with-chapati.jpg?s=612x612&w=0&k=20&c=0mGnvNM2lxl-dTTJlhAfVJE5WidxYmmvrvNs1NZUKvs= alt="Roti" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🫓</div></div>
+      <div class="card-body"><div class="card-name">Roti</div><div class="card-desc">Fresh soft roti</div><div class="card-footer"><div class="card-price">₹15</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/526846282/photo/traditional-indian-roti-ready-to-serve.jpg?s=612x612&w=0&k=20&c=o3yyyZ4yjfwsgcZf1JIu0rice8cB2nLflh6EgF6c6pk= alt="Butter Roti" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🧈</div></div>
+      <div class="card-body"><div class="card-name">Butter Roti</div><div class="card-desc">Roti with a butter finish</div><div class="card-footer"><div class="card-price">₹20</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/511624049/photo/fresh-homemade-sri-lankan-pol-roti.jpg?s=612x612&w=0&k=20&c=waDfTBsCB6anOAPvUX2q7VVPl7Y6ffKE1kXnoA04gC8= alt="Bajra Rotlo" loading="lazy"><div class="card-img-overlay"></div><div class="card-badge-img">Gujarati</div><div class="card-img-fallback">🌾</div></div>
+      <div class="card-body"><div class="card-name">Bajra Rotlo</div><div class="card-desc">Traditional bajra flatbread</div><div class="card-footer"><div class="card-price">₹40</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/1199370311/photo/closeup-of-indian-traditional-cuisine-chapati-the-phooli-roti-fulka-indian-bread-flatbread.jpg?s=612x612&w=0&k=20&c=dYjhvBtq4H64SbckhwJnAtWJXegd8QicQHvg3ygvnYM= alt="Bajra Butter Rotlo" loading="lazy"><div class="card-img-overlay"></div><div class="card-badge-img">Gujarati</div><div class="card-img-fallback">🌾</div></div>
+      <div class="card-body"><div class="card-name">Bajra Butter Rotlo</div><div class="card-desc">Bajra rotlo with butter</div><div class="card-footer"><div class="card-price">₹50</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/2162110995/photo/soft-drinks.jpg?s=612x612&w=0&k=20&c=fLs6RYC7NPY3oP0r-F2QgiQKeiXC5vtDEpdAJS590-o= alt="Cold Drinks" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🥤</div></div>
+      <div class="card-body"><div class="card-name">Cold Drinks</div><div class="card-desc">Thums Up, Coca-Cola, Sprite, Fanta, Maaza</div><div class="card-footer"><div class="card-price">₹20</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/1147733993/photo/spiced-buttermilk-indian-traditional-summer-drink.jpg?s=612x612&w=0&k=20&c=OM9Vh7SK9x5fSDvnmsJVgbZAXUFwfbQ1ORIz_Yk06XQ= alt="Chaas" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">🥛</div></div>
+      <div class="card-body"><div class="card-name">Buttermilk / Amul Chaas</div><div class="card-desc">Cool refreshing chaas &amp; Amul Masti Masala Chaas</div><div class="card-footer"><div class="card-price">₹20</div></div></div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="card-img-wrap"><img src=https://media.istockphoto.com/id/623194392/photo/group-of-plastic-drink-water-bottles.jpg?s=612x612&w=0&k=20&c=Ph5OVWb8f3b9AZ5wICPrVSXJ9N8fM-mLT0EUNxVEtHM= alt="Water Bottle" loading="lazy"><div class="card-img-overlay"></div><div class="card-img-fallback">💧</div></div>
+      <div class="card-body"><div class="card-name">Water Bottle</div><div class="card-desc">500ml / 1L water bottle</div><div class="card-footer"><div class="card-price">₹10 / ₹20</div></div></div>
+    </div>
+
+  </div><!-- /bread -->
+
+</section>
+
+<!-- ══════════════════════════════════════════
+     GALLERY SHOWCASE
+══════════════════════════════════════════ -->
+<section class="showcase-section" id="showcase">
+  <div class="reveal">
+    <div class="section-eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Gallery</div></div>
+    <h2 class="section-title">Made with Love,<br>Served with Pride.</h2>
+    <p class="section-sub">A glimpse of what comes out of our kitchen every day.</p>
+  </div>
+
+  <div class="showcase-grid reveal">
+    <div class="showcase-item tall">
+      <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=600&h=700&q=85" alt="Surti Style Eggs" loading="lazy">
+      <div class="showcase-overlay"><div class="showcase-name">Surti Style Eggs</div><div class="showcase-price">From ₹70</div></div>
+    </div>
+    <div class="showcase-item">
+      <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=500&h=300&q=80" alt="Egg Rolls" loading="lazy">
+      <div class="showcase-overlay"><div class="showcase-name">Egg Rolls</div><div class="showcase-price">From ₹100</div></div>
+    </div>
+    <div class="showcase-item">
+      <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=500&h=300&q=80" alt="Biryani" loading="lazy">
+      <div class="showcase-overlay"><div class="showcase-name">Anda Biryani</div><div class="showcase-price">₹150</div></div>
+    </div>
+    <div class="showcase-item">
+      <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=500&h=300&q=80" alt="Bahubali Special" loading="lazy">
+      <div class="showcase-overlay"><div class="showcase-name">Bahubali Special</div><div class="showcase-price">₹620</div></div>
+    </div>
+    <div class="showcase-item">
+      <img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?auto=format&fit=crop&w=500&h=300&q=80" alt="Sandwiches" loading="lazy">
+      <div class="showcase-overlay"><div class="showcase-name">Egg Sandwiches</div><div class="showcase-price">From ₹60</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     LOCATION
+══════════════════════════════════════════ -->
+<section class="location-section" id="location">
+  <div class="reveal">
+    <div class="location-map">
+      <div class="map-pin"><div class="map-pin-inner">🍳</div></div>
+      <div class="map-address">Bhakti Nagar Circle,<br>Sanala Bypass, Morbi</div>
+    </div>
+  </div>
+  <div class="reveal">
+    <div class="section-eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">Find Us</div></div>
+    <h2 class="section-title">Come Visit<br>or Order Online.</h2>
+    <p class="section-sub">Walk in for the full experience, or order from the comfort of your home.</p>
+    <div class="info-item">
+      <div class="info-icon">📍</div>
+      <div><div class="info-title">Address</div><div class="info-value">Bhakti Nagar Circle, Sanala Bypass, Morbi</div></div>
+    </div>
+    <div class="info-item">
+      <div class="info-icon">⏱</div>
+      <div><div class="info-title">Order Ready In</div><div class="info-value">20 minutes after placing order</div></div>
+    </div>
+    <div class="info-item">
+      <div class="info-icon">📱</div>
+      <div><div class="info-title">Order Online</div><div class="info-value">Zomato &amp; Swiggy — search "Surti Egg Tadka"</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">Surti <span>Egg Tadka</span></div>
+      <div class="footer-tagline">Morbi's most beloved egg destination. Every dish crafted with Surti love, served fresh and hot.</div>
+    </div>
+    <div class="footer-links">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="#menu" onclick="switchTab('starters', document.querySelectorAll('.tab-btn')[0])">Starters</a></li>
+        <li><a href="#menu" onclick="switchTab('omelette', document.querySelectorAll('.tab-btn')[2])">Omelettes</a></li>
+        <li><a href="#menu" onclick="switchTab('special',  document.querySelectorAll('.tab-btn')[5])">Special Items</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Visit Us</h4>
+      <ul>
+        <li><a href="#location">Bhakti Nagar Circle</a></li>
+        <li><a href="#location">Sanala Bypass, Morbi</a></li>
+        <li><a href="#">Order on Zomato</a></li>
+        <li><a href="#">Order on Swiggy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Surti Egg Tadka, Morbi. All rights reserved.</div>
+    <div class="footer-platforms">
+      <div class="plat-badge"><div class="plat-dot zomato-dot"></div> Zomato</div>
+      <div class="plat-badge"><div class="plat-dot swiggy-dot"></div> Swiggy</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ TOAST ══ -->
+<div id="cartToast"></div>
+
+<!-- ══ CART OVERLAY ══ -->
+<div id="cartOverlay" onclick="closeCart()"></div>
+
+<!-- ══ CART DRAWER ══ -->
+<div id="cartDrawer">
+  <div class="cart-header">
+    <h2>🛒 Your Cart</h2>
+    <div class="cart-header-right">
+      <div class="cart-total-header">Total: <span id="cartTotal">₹0</span></div>
+      <button class="cart-close" onclick="closeCart()">✕</button>
+    </div>
+  </div>
+  <div id="cartItemsList"></div>
+  <div class="cart-footer">
+    <div class="cart-footer-total">
+      <span class="cart-footer-label">Grand Total</span>
+      <span id="cartTotalBottom">₹0</span>
+    </div>
+    <button id="checkoutBtn" onclick="checkout()">✅ Place Order &amp; View Bill</button>
+  </div>
+</div>
+
+<!-- ══ BILL OVERLAY ══ -->
+<div id="billOverlay" onclick="closeBill()"></div>
+
+<!-- ══ BILL MODAL ══ -->
+<div id="billModal">
+  <div class="bill-header">
+    <h2>🍳 Surti Egg Tadka</h2>
+    <p>Bhakti Nagar Circle, Sanala Bypass, Morbi</p>
+    <div class="bill-meta">
+      <span>Order No: <b id="billOrderNo"></b></span>
+      <span>Time: <b id="billTime"></b></span>
+      <span>Ready in: <b>~20 min</b></span>
+    </div>
+  </div>
+  <div class="bill-body">
+    <table class="bill-table">
+      <thead>
+        <tr><th>Item</th><th class="bill-center">Qty</th><th class="bill-right">Price</th><th class="bill-right">Total</th></tr>
+      </thead>
+      <tbody id="billRows"></tbody>
+    </table>
+  </div>
+  <div class="bill-total-row">
+    <span class="bill-total-label">Grand Total</span>
+    <span id="billGrandTotal">₹0</span>
+  </div>
+  <div class="bill-actions">
+    <button class="bill-back-btn" onclick="closeBill()">← Edit Cart</button>
+    <button class="bill-confirm-btn" onclick="confirmOrder()">🎉 Confirm Order</button>
+  </div>
+</div>
+
+<!-- ══ THANK YOU MODAL ══ -->
+<div id="thankModal">
+  <div class="thank-icon">🎉</div>
+  <div class="thank-title">Thank You for<br><em>Ordering!</em></div>
+  <p class="thank-sub">Your order has been placed successfully.<br>We're cooking it fresh just for you!</p>
+  <div class="thank-address">
+    📍 <b>Surti Egg Tadka</b><br>
+    Bhakti Nagar Circle, Sanala Bypass, Morbi<br><br>
+    ⏱ Your order will be ready in <b>~20 minutes</b>
+  </div>
+  <p class="thank-sub" style="font-size:13px; color:#F5A623; font-weight:600;">
+    🌟 Morbi's Finest Egg Destination — Thank you for choosing us!
+  </p>
+  <br>
+  <button class="thank-ok-btn" onclick="closeThankYou()">🍳 Back to Menu</button>
+</div>
+
+<!-- Main Script -->
+<script src="script.js"></script>
+</body>
+</html>
