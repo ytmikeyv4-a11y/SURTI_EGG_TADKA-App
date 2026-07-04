@@ -714,6 +714,7 @@
 
 <!-- ══ CART DRAWER ══ -->
 <div id="cartDrawer">
+  <div class="drawer-handle"></div>
   <div class="cart-header">
     <h2>🛒 Your Cart</h2>
     <div class="cart-header-right">
@@ -778,6 +779,18 @@
   </p>
   <br>
   <button class="thank-ok-btn" onclick="closeThankYou()">🍳 Back to Menu</button>
+</div>
+
+<!-- ══ MOBILE FLOATING CART BAR (app-style) ══ -->
+<div id="mobileCartBar" class="mobile-cart-bar" onclick="openCart()">
+  <div class="mcb-left">
+    <span class="mcb-count" id="mcbCount">0</span>
+    <div class="mcb-text">
+      <span class="mcb-label">Items added</span>
+      <span class="mcb-total" id="mcbTotal">₹0</span>
+    </div>
+  </div>
+  <span class="mcb-btn">View Cart <span class="mcb-arrow">→</span></span>
 </div>
 
 <!-- Main Script -->

@@ -142,6 +142,14 @@ function updateCartUI() {
   document.getElementById('cartTotal').textContent = '₹' + totalCost;
   document.getElementById('cartTotalBottom').textContent = '₹' + totalCost;
 
+  /* Mobile floating cart bar (app-style) */
+  var mcb = document.getElementById('mobileCartBar');
+  if (mcb) {
+    document.getElementById('mcbCount').textContent = totalItems;
+    document.getElementById('mcbTotal').textContent = '₹' + totalCost;
+    mcb.classList.toggle('show', totalItems > 0);
+  }
+
   /* Checkout button state */
   var checkoutBtn = document.getElementById('checkoutBtn');
   checkoutBtn.disabled = totalItems === 0;
@@ -160,11 +168,15 @@ function openCart() {
   document.getElementById('cartDrawer').classList.add('open');
   document.getElementById('cartOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
+  var mcb = document.getElementById('mobileCartBar');
+  if (mcb) mcb.classList.add('hide-temp');
 }
 function closeCart() {
   document.getElementById('cartDrawer').classList.remove('open');
   document.getElementById('cartOverlay').classList.remove('open');
   document.body.style.overflow = '';
+  var mcb = document.getElementById('mobileCartBar');
+  if (mcb) mcb.classList.remove('hide-temp');
 }
 
 /* Checkout — show bill modal */
@@ -192,6 +204,8 @@ function checkout() {
   document.getElementById('billModal').classList.add('open');
   document.getElementById('billOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
+  var mcb = document.getElementById('mobileCartBar');
+  if (mcb) mcb.classList.add('hide-temp');
 }
 
 /* Confirm order */
@@ -207,6 +221,8 @@ function closeThankYou() {
   document.getElementById('thankModal').classList.remove('open');
   document.getElementById('billOverlay').classList.remove('open');
   document.body.style.overflow = '';
+  var mcb = document.getElementById('mobileCartBar');
+  if (mcb) mcb.classList.remove('hide-temp');
 }
 
 /* Close bill */
